@@ -1,11 +1,13 @@
 from langchain.agents import create_agent
 
+from model.factory import chat_model
+
 
 class ReactAgent:
     def __init__(self):
         self.agent = create_agent(
-            model=None,
-            system_prompt=None,
+            model=chat_model,
+            system_prompt=load_system_prompts,
             tools=[],
             middleware=[],
         )
