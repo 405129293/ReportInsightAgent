@@ -2,4 +2,4 @@ test:
   db_user: reader
   db_password: e~6npfO_3)HS9m
   db_host: 10.16.160.86:20003
-  db_name: rp_log_ods
+  db_name: rp_log_dwd

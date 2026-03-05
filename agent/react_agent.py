@@ -34,6 +34,6 @@ class ReactAgent:
 if __name__ == '__main__':
     agent = ReactAgent()
 
-    query = "数据库中ctct_antideface_fcg_lm_ods表的前10条数据是什么样的?"
+    query = "数据库中ctct_etl_error_message_record表的前10条数据是什么样的?"
     for chunk in agent.execute_stream(query):
         print(chunk, end="", flush=True)

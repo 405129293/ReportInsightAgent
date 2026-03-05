@@ -61,7 +61,7 @@ def _ensure_limit(sql: str, default_limit: int = 50, max_limit: int = 200) -> st
     return s + ";"
 
 
-def _format_table(columns: List[str], rows: Tuple[Tuple[Any, ...], ...], max_chars: int = 4000) -> str:
+def _format_table(columns: List[str], rows: Tuple[Tuple[Any, ...], ...], max_chars: int = 40000) -> str:
     """
     把查询结果格式化成“文本表格”，并限制最大字符数，避免塞爆大模型。
     """
@@ -107,7 +107,7 @@ def sql_straight_query_tool(query: str) -> str:
     try:
         cols, rows = _sr_client.query(sql)
         logger.info(f"[sql_query_tool] ok, rows={len(rows)}")
-        return _format_table(cols, rows, max_chars=4000)
+        return _format_table(cols, rows, max_chars=40000)
     except Exception as e:
         logger.exception(f"[sql_query_tool] failed: {e}")
         return f"SQL 执行失败：{type(e).__name__}: {e}"

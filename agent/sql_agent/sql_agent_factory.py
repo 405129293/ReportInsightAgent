@@ -7,14 +7,14 @@ import os
 db_user = "reader"
 db_password = "e~6npfO_3)HS9m"
 db_host = "10.16.160.86:20003"
-db_name = "rp_log_ods"
+db_name = "rp_log_dwd"
 
 
 def build_sql_agent():
     db = SQLDatabase.from_uri(
         f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}",
         include_tables=[
-            "ctct_antideface_fcg_lm_ods",
+            "ctct_etl_error_message_record",
             # 只加你会查的表
         ],
     )
